@@ -36,7 +36,17 @@ const items = [
   ];
 const [search, setSearch] = useState(items);
 const [find,setFind] = useState("");
-return()
+return(
+  <div className="App">
+      <h1>React Coding Questions 1</h1>
+      {search.map((item)=>(
+         <div key={item.id}>
+         <p>{item.name}</p>
+         <p>{item.category}</p>
+         </div>
+      ))}
+  </div>
+)
 }
-export default App
+export default App;
      ```
