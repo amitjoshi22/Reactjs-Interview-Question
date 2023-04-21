@@ -41,13 +41,38 @@ const items = [
 const [search, setSearch] = useState(items);
 const [find,setFind] = useState("");
 
+function handleSearch() {
+ if (find === "") {
+   setSearch(items);
+ } else {
+   setSearch(
+     items.filter(
+       (item) => item.name.includes(find) || item.category.includes(find),
+     ),
+   );
+ }
+}
+
+function handleClear() {
+ setFind("");
+ setSearch(items);
+}
+
 return(
   <div className="App">
       <h1>React Coding Questions 1</h1>
+      <input
+       type="text"
+       placeholder="Enter search term"
+       value={find}
+       onChange={(e) => setFind(e.target.value)}
+     />
+     <button onClick={handleSearch}>Search</button>
+     <button onClick={handleClear}>Clear</button>
       {search.map((item)=>(
          <div key={item.id}>
-         <p>{item.name}</p>
-         <p>{item.category}</p>
+         <p>Name: {item.name}</p>
+         <p>Category: {item.category}</p>
          </div>
       ))}
   </div>
