@@ -1,10 +1,13 @@
 # Reactjs-Interview-Question
 
 ### 1) Create a React component that renders a list of items from an array of data, and allows the user to filter the list by a search term.
+
  <b>Solution ➡️</b>
-    ``` js
+ 
+ ``` js
 //App.js
-import {useState} from 'react';
+
+import React, { useState } from "react";
 
 function App(){
 const items = [
@@ -34,8 +37,10 @@ const items = [
       category: "category2",
     },
   ];
+  
 const [search, setSearch] = useState(items);
 const [find,setFind] = useState("");
+
 return(
   <div className="App">
       <h1>React Coding Questions 1</h1>
@@ -46,7 +51,10 @@ return(
          </div>
       ))}
   </div>
-)
+);
 }
+
 export default App;
-     ```
+
+
+```
